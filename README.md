@@ -30,5 +30,8 @@ Whether you're a beginner learning Python or someone diving into data visualizat
 
 ##OUTPUT:
 
+![Image](https://github.com/user-attachments/assets/21a63b85-b25a-4575-ba8d-e01dc50f70c9)
 
+
+![Image](https://github.com/user-attachments/assets/43d66d74-c504-4e09-ac25-529cb7f5ef59)
 
