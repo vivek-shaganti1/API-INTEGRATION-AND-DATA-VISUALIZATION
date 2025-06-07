@@ -1,0 +1,39 @@
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+.container {
+    background-color: rgba(0, 0, 0, 0.6);
+    margin: 5% auto;
+    padding: 30px;
+    border-radius: 15px;
+    width: 60%;
+}
+
+input, button {
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 10px;
+    border: none;
+}
+
+button {
+    background-color: #00bfff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #009acd;
+}
+
+.plot-img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 700px;
+}

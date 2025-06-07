@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Weather Dashboard</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: url('https://hackster.imgix.net/uploads/attachments/1536460/_4w5otCsDgr.blob?auto=compress&w=1600&h=1200&fit=min&fm=jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.8);
+        }
+
+       h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #080808; /* Change heading color here */
+ }
+
+
+        form {
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            padding: 12px 15px;
+            font-size: 18px;
+            width: 280px;
+            border-radius: 8px;
+            border: none;
+            outline: none;
+        }
+
+        input[type="submit"] {
+            padding: 12px 30px;
+            font-size: 18px;
+            margin-left: 10px;
+            border-radius: 8px;
+            border: none;
+            background-color: #ffbb33;
+            color: #222;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #ffa500;
+        }
+
+        .weather-info {
+            margin-top: 20px;
+            font-size: 22px;
+            background-color: rgba(0, 0, 0, 0.45);
+            padding: 20px 30px;
+            border-radius: 15px;
+            max-width: 400px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        img {
+            margin-top: 30px;
+            max-width: 90%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
+            border: 2px solid #fff8dc;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Report</h1>
+
+    <form method="POST">
+        <input type="text" name="city" placeholder="Enter city name" required />
+        <input type="submit" value="Get Forecast" />
+    </form>
+
+    {% if weather %}
+        <div class="weather-info">
+            <p><strong>City:</strong> {{ weather.city }}</p>
+            <p><strong>Description:</strong> {{ weather.description }}</p>
+            <p><strong>Temperature:</strong> {{ weather.temp }} °C</p>
+            <p><strong>Humidity:</strong> {{ weather.humidity }} %</p>
+        </div>
+    {% endif %}
+
+    {% if image %}
+        <img src="{{ url_for('static', filename=image) }}" alt="Temperature Forecast Plot" />
+    {% endif %}
+</body>
+</html>
